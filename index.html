@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLRBK0ZXD8"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HLRBK0ZXD8');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -8,32 +17,49 @@
     <title>True Form Wood Working</title>
 </head>
     <body>
+
+        
         <header>
+
+
             <div class="nav-wrapper">
+                <div class="nav-toggle" id="navMenu">
+                    <hr class="top"/>
+                    <hr class="btm"/>
+                </div>
                 <nav class="navbar">
-                    <a href="#" class="nav-link">HOME</a>
-                    <a href="#" class="nav-link">SERVICES</a>
-                    <a href="#" class="nav-link">PORTFOLIO</a>
-                    <a href="#" class="nav-link">CONTACT</a>
+                    <a href="./index.html" class="nav-link">HOME</a>
+                    <a href="./schedule.html" class="nav-link">BOOK</a>
+                    <a href="./index.html#services" class="nav-link">SERVICES</a>
+                    <a href="./index.html#portfolio" class="nav-link">PORTFOLIO</a>
+                    <a href="./index.html#contact" class="nav-link">CONTACT</a>
                 </nav>            
             </div>
+
+
         </header>
+
+
 
         <div class="main">
 
-            <section style="padding:0;">
+
+            <section class="animate__animated animate__fadeIn">
+
 
                 <div class="landing-container">
-                    <img class="landing-banner" src="https://picsum.photos/1920/1080">
+                    <img class="landing-banner darken" src="./images/workshop_tools.png">
                     <div class="landing-banner-center">
-                        <img class="landing-elem left" src="flourish.png">
+                        <img class="landing-elem left-fl" src="./images/flourish.png">
                         <div class="landing-content-wrapper">
-                            <img src="logo.png" alt="True Form Logo" class="logo">
-                            <h1>TRUEFORM</h1>
+                            <img src="./images/logo.png" alt="True Form Logo" class="logo">
+                            <h1>TRUEFORM‎ </h1>
+                            <h2>woodworking‎ </h2>
                         </div>
-                        <img class="landing-elem right-fl" src="flourish.png">
+                        <img class="landing-elem right-fl" src="./images/flourish.png">
                     </div>
                 </div>
+
 
             </section>
 
@@ -42,22 +68,27 @@
             <section>
 
 
-                <div class="hero-container">
+                <div class="hero-container nav-color-diff">
                     <div class="hero-desc">
-                        <h2>TRUE FORM WOOD WORKING</h2>
+                        <h2>True Form Woodworking</h2>
                         <h3>FINEST CUSTOM CABINETRY ✦ TRIM & FINISH CARPENTRY</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in turpis id enim pharetra malesuada in vitae augue. Fusce a metus a eros lacinia volutpat et vel quam. Nulla facilisi. Sed vel erat quis elit bibendum feugiat. Vivamus ut elit sed sapien facilisis sollicitudin. Quisque non ligula ut purus cursus varius. Pellentesque at ultrices est, sed cursus erat. Morbi volutpat, diam et vestibulum feugiat, justo odio bibendum dolor, ac vulputate est eros non purus. Mauris vel lectus at arcu.</p>
                     </div>
-                    <div class="hero-contact">
-                        <div>
-                            <h3>EMAIL</h3>
-                            <p>info@trueformscranton.com</p>
+                    <div class="hero-contact-wrapper">
+                        <div class="hero-img">
+                            <img src="https://picsum.photos/600/500?random=8">
                         </div>
-                        <div>
-                            <h3>PHONE</h3>
-                            <p>570-212-9101</p>
+                        <div class="hero-contact">
+                            <div>
+                                <h3>PHONE</h3>
+                                <p><a class="link" type="tel" href="tel:570-212-9101">570-212-9101</a></p>
+                            </div>
+                            <div>
+                                <h3>EMAIL</h3>
+                                <p><a class="link" type="email" href="mailto:info@trueformscranton.com">info@trueformscranton.com</a></p>
+                            </div>
+                            <a class="contact-btn" href="#contact">Get in Touch</a>
                         </div>
-                        <a href="/contact">Get in Touch</a>
                     </div>
                 </div>
 
@@ -67,11 +98,12 @@
 
 
             <section>
+
 
                 <!-- 4 Image Carousel -->
                 <div class="carousel-container">
                     
-                    <div class="carousel darken">
+                    <div class="carousel">
                         <div class="carousel-slide" style="background-image: url('https://picsum.photos/1920/1080?random=1');"></div>
                         <div class="carousel-slide" style="background-image: url('https://picsum.photos/1920/1080?random=2');"></div>
                         <div class="carousel-slide" style="background-image: url('https://picsum.photos/1920/1080?random=3');"></div>
@@ -95,19 +127,58 @@
 
 
 
-            <section>
+            <section id="services">
 
 
-                <div class="services-container">
-                    <img class="services-image" src="https://picsum.photos/500/600">
+                <div class="services-container nav-color-diff">
                     <div class="services-desc">
-                        <h1>WHAT WE DO</h1>
+                        <h2>Our Services</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, lorem vitae dictum mollis, odio felis vehicula arcu, at posuere lorem est vitae ligula. Nulla facilisi. Proin id purus et odio fermentum vehicula. Mauris quis magna vitae arcu varius bibendum. Nullam at.</p>
                         <ul class="service-list">
                             <li>CUSTOM CABINETRY</li>
                             <li>TRIM & FINISH CARPENTRY</li>
+                            <li>RESIDENTIAL CONTRACTOR</li>
+                            <li>HANDYMAN SERVICES</li>
                         </ul>
-                        <a href="/services">SERVICES</a>
+                        <a href="./schedule.html">Book Consultation</a>
+                    </div>
+                    <img class="services-image" src="https://picsum.photos/500/600">
+
+                </div>
+
+
+            </section>
+
+
+
+            <section id="portfolio">
+
+
+                <div class="full-image-container">
+                    <img class="full-image darken" src="https://picsum.photos/1920/1080">
+                    <div class="portfolio-heading">
+                        <h2 class="portfolio-header">Experienced Craftsmanship<hr/></h2>
+                        <p class="portfolio-subheader">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in turpis id enim pharetra malesuada in vitae augue. Fusce a metus a eros lacinia volutpat et vel quam. Nulla facilisi. Sed vel erat quis elit bibendum feugiat. Vivamus ut elit sed sapien facilisis sollicitudin.</p>
+                    </div>
+                </div>
+                <div class="portfolio-container">
+                    <div class="project">
+                        <a href="https://www.google.com">
+                            <img class="darken" src="https://picsum.photos/1080/1080?random=1">
+                            <h4>Project</h4>
+                        </a>
+                    </div>
+                    <div class="project">
+                        <a href="https://www.google.com">
+                            <img class="darken" src="https://picsum.photos/1080/1080?random=2">
+                            <h4>Project</h4>
+                        </a>
+                    </div>
+                    <div class="project">
+                        <a href="https://www.google.com">
+                            <img class="darken" src="https://picsum.photos/1080/1080?random=3">
+                            <h4>Project</h4>
+                        </a>
                     </div>
                 </div>
 
@@ -116,23 +187,70 @@
 
 
 
-            <section>
+            <section id="contact">
 
 
-                <div class="full-image-container">
-                    <img class="full-image darken" src="https://picsum.photos/1920/1080">
-                    <p class="post-hero-p">Quality Craftsmanship</p>
+                <div class="contact-container nav-color-diff">
+                    <div class="contact-desc">
+                        <h2>Contact Us</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in turpis id enim pharetra malesuada in vitae augue. Fusce a metus a eros lacinia volutpat et vel quam. Nulla facilisi. Sed vel erat quis elit bibendum feugiat.</p>
+                        <div class="contact-img"><img src="https://picsum.photos/600/500?random=9"></div>
+                    </div>
+                    <div class="contact-form">
+                        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+                        <script>
+                          hbspt.forms.create({
+                            region: "na1",
+                            portalId: "44510780",
+                            formId: "4582876b-f729-411e-af87-884e6dd70962"
+                          });
+                        </script>
+                    </div>
                 </div>
 
 
             </section>
 
 
-
-            <section></section>
-
         </div>
+        <!-- Start of HubSpot Embed Code -->
+        <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/44510780.js"></script>
+        <!-- End of HubSpot Embed Code -->
     </body>
+
+
+
+    <footer>
+
+
+        <div class="footer-container">
+            <div class="footer-desc">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in turpis id enim pharetra malesuada in vitae augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in turpis id enim pharetra malesuada in vitae augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in turpis id enim pharetra malesuada in vitae augue.</p>
+                <div class="text-logo">True Form Woodworking</div>
+                <p class="footer-mini-info">📍 SCRANTON, PA | <a>TERMS & CONDITIONS</a> | <a>FAQs</a></p>
+            </div>
+            <div class="footer-links-contact">
+                <ul class="footer-link-list">
+                    <li><a href="./schedule.html">BOOK US</a></li>
+                    <li><a href="./index.html#contact">CONTACT</a></li>
+                    <li><a href="./index.html#services">SERVICES</a></li>
+                    <li><a href="./index.html#portfolio.html">PORTFOLIO</a></li>
+                </ul>
+                <div class="footer-contact">
+                    <div>
+                        <h3>PHONE</h3>
+                        <p><a class="link" type="tel" href="tel:570-212-9101">570-212-9101</a></p>
+                    </div>
+                    <div>
+                        <h3>EMAIL</h3>
+                        <p><a class="link" type="email" href="mailto:info@trueformscranton.com">info@trueformscranton.com</a></p>
+                    </div>
+                    <!-- <a class="footer-contact-btn" href="/contact">Get in Touch</a> -->
+                </div>
+            </div>
+        </div>
+        
+
+    </footer>
     <script src="scripts.js"></script>
-    </script>
 </html>
