@@ -253,3 +253,18 @@ document.addEventListener('click', function(event) {
         }
     }
 });
+
+// Parallax Images
+function updateParallax() {
+    const parallaxImages = document.querySelectorAll('.parallax');
+
+    parallaxImages.forEach(img => {
+        const rect = img.parentElement.getBoundingClientRect();
+        const speed = 0.1; // Adjust this value for different speeds
+        const translateY = rect.top * speed;
+
+        img.style.transform = `translate(-0.1%, ${translateY}px)`;
+    });
+}
+
+window.addEventListener('scroll', updateParallax);

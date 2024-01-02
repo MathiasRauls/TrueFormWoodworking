@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Open+Sans:wght@500&display=swap');
 @font-face {
     font-family: 'Noir Jolie';
-    src: url('./font/noirjolie.otf') format('opentype');
+    src: url('../font/noirjolie.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -39,7 +39,7 @@ strong {
 
 section {
     width: 100%;
-    padding: 0 0 100px 0;
+    margin: 75px 0 0 0;
 }
 
 section > div:first-child {
@@ -68,6 +68,7 @@ section > div:first-child {
 }
 
 h2 {
+    margin-top: 0;
     -webkit-text-stroke: 1px; /* This is not standard and works only in some browsers */
     font-family: 'Noir Jolie', sans-serif;
     font-size: 2em;
@@ -86,7 +87,7 @@ h2 {
     margin: 20px;
     cursor: default;
     position: fixed;
-    z-index: 9999;
+    z-index: 100;
     transition: all .2rgba(165, 42, 42, 0.132)-out;
 }
 
@@ -221,7 +222,7 @@ h2 {
 
 .landing-content-wrapper {
     display: flex;
-    z-index: 9999;
+    z-index: 100;
     max-width: 600px;
     padding: 0 50px;
     align-items: center;
@@ -290,7 +291,7 @@ h2 {
 
 .landing-elem {
     width: 20%;
-    z-index: 9999;
+    z-index: 100;
     transform: translateX(0);
     opacity: 0;  /* Initially hidden */
 }
@@ -343,6 +344,7 @@ h2 {
     transition: opacity 1s ease-in-out;
     background-size: cover;
     background-position: center;
+    filter: brightness(0.75);
 }
 
 .carousel-slide:nth-child(1) { /* The first slide should be visible by default */
@@ -420,7 +422,6 @@ h2 {
 }
 
 .hero-desc h2 {
-    margin-top: 0;
     font-weight: 400;
     letter-spacing: .2em;   
 }
@@ -521,7 +522,7 @@ h2 {
 /* ---------------------------- SERVICES ---------------------------- */
 
 .services-container {
-    gap: 100px;
+    gap: 50px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -622,6 +623,7 @@ h2 {
     width: 50px;
     border-radius: 3px 0 2px 1px;
     border: 1px solid white;
+    margin: 10px auto;
 }
 
 .portfolio-header {
@@ -681,8 +683,10 @@ h2 {
     filter: brightness(2);
     cursor: pointer;
 }
-.project:hover .project h4 {
+.project:hover h4 {
     filter: brightness(-2);
+    font-weight: bold;
+    transition: all .3s ease-in-out;
 }
 
 .project img {
@@ -696,13 +700,16 @@ h2 {
     margin: 0 auto;
     color: white;
     font-weight: 400;
-    font-size: 2rem;
+    font-size: 1.5rem;
     position: absolute;
-    letter-spacing: .2em;
     text-align: center;
+    letter-spacing: .15em;
+    text-transform: uppercase;
     transform: translate(-50%, -50%);
-    font-family: 'Noir Jolie', sans-serif;
+    font-family: Raleway, sans-serif;
+    transition: all .3s ease-in-out;
 }
+
 
 /* --------------------------- CONTACT --------------------------- */
 
@@ -905,9 +912,8 @@ footer .text-logo {
 /* --------------------------- SCHEDULE --------------------------- */
 
 .schedule-container {
-    gap: 25px;
     margin: 0 auto;
-    margin-top: 75px;
+    margin-top: 60px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -923,8 +929,11 @@ footer .text-logo {
     flex-direction: column;
 }
 
-.schedule-desc h2 {
-    margin-top: 10px;
+.schedule-desc h1 {
+    font-weight: 900;
+    font-size: 3rem;
+    letter-spacing: .2em;
+    font-family: 'Noir Jolie', sans-serif;
 }
 
 .schedule-desc p {
@@ -961,16 +970,22 @@ footer .text-logo {
         padding: 15px;
     }
 
+    .hero-contact-wrapper {
+        width: 700px;
+    }
+
     .hero-img {
-        display: unset;
+        display: block;
         width: 100%;
         height: 234px;
+        overflow: hidden;
     }
+    
     .hero-img img {
-        width: 300px;
+        width: 100%;
         height: 100%;
         object-fit: cover;
-    }
+    }    
 
     .services-desc {
         padding: 15px;
@@ -978,6 +993,11 @@ footer .text-logo {
 }
 
 @media (max-width: 900px) {
+
+    section {
+        margin: 50px 0 0 0;
+    }
+
     .footer-container {
         margin: 0 auto;
         justify-content: center;
@@ -999,7 +1019,7 @@ footer .text-logo {
         width: 100svw;
         height: 100vh;
         height: 100svh;
-        z-index: 99999;
+        z-index: 150;
         padding: 18px 0 0 0;
         flex-direction: column;
         transform: translateX(-100%);
@@ -1015,7 +1035,7 @@ footer .text-logo {
 
     .nav-toggle {
         cursor: pointer;
-        z-index: 999999;
+        z-index: 150;
         opacity: 100%;
     }
 

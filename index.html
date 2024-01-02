@@ -13,7 +13,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/project-popup.css">
     <title>True Form Wood Working</title>
 </head>
     <body>
@@ -40,15 +41,35 @@
         </header>
 
 
+        <div class="project-popup-container" id="popupContainer">
+
+            <div class="project-popup" id="modernHomeView">
+                <div class="project-popup-top">
+                    <h3>Modern Home</h3>
+                    <div class="popup-toggle" id="popupToggle">&#x2715</div>
+                </div>
+
+                <div class="slideshow-controls">
+                    <span class="slideshow-arrow left" id="prevSlide"><</span>
+                    <span class="slideshow-arrow right" id="nextSlide">></span>
+                </div>
+                
+                <div class="project-popup-desc">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in turpis id enim pharetra malesuada in vitae augue. Fusce a metus a eros lacinia volutpat et vel quam. Nulla facilisi.</p>
+                </div>
+            </div>
+
+        </div>
 
         <div class="main">
 
 
-            <section class="animate__animated animate__fadeIn">
+            <section class="animate__animated animate__fadeIn" style="margin:unset;">
+
 
 
                 <div class="landing-container">
-                    <img class="landing-banner darken" src="./images/workshop_tools.png">
+                    <img class="landing-banner darken parallax" src="./images/workshop_tools.png">
                     <div class="landing-banner-center">
                         <img class="landing-elem left-fl" src="./images/flourish.png">
                         <div class="landing-content-wrapper">
@@ -61,14 +82,16 @@
                 </div>
 
 
+
             </section>
 
 
 
-            <section>
+            <section class="nav-color-diff">
 
 
-                <div class="hero-container nav-color-diff">
+
+                <div class="hero-container">
                     <div class="hero-desc">
                         <h2>True Form Woodworking</h2>
                         <h3>FINEST CUSTOM CABINETRY ✦ TRIM & FINISH CARPENTRY</h3>
@@ -76,7 +99,7 @@
                     </div>
                     <div class="hero-contact-wrapper">
                         <div class="hero-img">
-                            <img src="https://picsum.photos/600/500?random=8">
+                            <img src="https://picsum.photos/600/400?random=8">
                         </div>
                         <div class="hero-contact">
                             <div>
@@ -93,6 +116,7 @@
                 </div>
 
 
+
             </section>
 
 
@@ -100,8 +124,9 @@
             <section>
 
 
+
                 <!-- 4 Image Carousel -->
-                <div class="carousel-container">
+                <div class="carousel-container parallax">
                     
                     <div class="carousel">
                         <div class="carousel-slide" style="background-image: url('https://picsum.photos/1920/1080?random=1');"></div>
@@ -123,14 +148,16 @@
                 </div>
 
 
+
             </section>
+            
+            <div id="services"></div>
+
+            <section class="nav-color-diff">
 
 
 
-            <section id="services">
-
-
-                <div class="services-container nav-color-diff">
+                <div class="services-container">
                     <div class="services-desc">
                         <h2>Our Services</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, lorem vitae dictum mollis, odio felis vehicula arcu, at posuere lorem est vitae ligula. Nulla facilisi. Proin id purus et odio fermentum vehicula. Mauris quis magna vitae arcu varius bibendum. Nullam at.</p>
@@ -142,59 +169,64 @@
                         </ul>
                         <a href="./schedule.html">Book Consultation</a>
                     </div>
-                    <img class="services-image" src="https://picsum.photos/500/600">
+                    <img class="services-image parallax" src="https://picsum.photos/500/600">
 
                 </div>
+
 
 
             </section>
+            
+            <div id="portfolio"></div>
+
+            <section>
 
 
-
-            <section id="portfolio">
-
-
-                <div class="full-image-container">
-                    <img class="full-image darken" src="https://picsum.photos/1920/1080">
-                    <div class="portfolio-heading">
-                        <h2 class="portfolio-header">Experienced Craftsmanship<hr/></h2>
-                        <p class="portfolio-subheader">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in turpis id enim pharetra malesuada in vitae augue. Fusce a metus a eros lacinia volutpat et vel quam. Nulla facilisi. Sed vel erat quis elit bibendum feugiat. Vivamus ut elit sed sapien facilisis sollicitudin.</p>
+                <div class="parallax">
+                    <div class="full-image-container">
+                        <img class="full-image darken" src="https://picsum.photos/1920/1080?random=1">
+                        <div class="portfolio-heading">
+                            <h2 class="portfolio-header">Superior Craftsmanship<hr/></h2>
+                            <p class="portfolio-subheader">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in turpis id enim pharetra malesuada in vitae augue. Fusce a metus a eros lacinia volutpat et vel quam. Nulla facilisi. Sed vel erat quis elit bibendum feugiat. Vivamus ut elit sed sapien facilisis sollicitudin.</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-container">
+                        <div class="project" id="modernHome">
+                            <a>
+                                <img class="darken" src="https://picsum.photos/1080/1080?random=1">
+                                <h4>Modern Home</h4>
+                            </a>
+                        </div>
+                        <div class="project">
+                            <a>
+                                <img class="darken" src="https://picsum.photos/1080/1080?random=2">
+                                <h4>Bathroom</h4>
+                            </a>
+                        </div>
+                        <div class="project">
+                            <a>
+                                <img class="darken" src="https://picsum.photos/1080/1080?random=3">
+                                <h4>Deck</h4>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="portfolio-container">
-                    <div class="project">
-                        <a href="https://www.google.com">
-                            <img class="darken" src="https://picsum.photos/1080/1080?random=1">
-                            <h4>Project</h4>
-                        </a>
-                    </div>
-                    <div class="project">
-                        <a href="https://www.google.com">
-                            <img class="darken" src="https://picsum.photos/1080/1080?random=2">
-                            <h4>Project</h4>
-                        </a>
-                    </div>
-                    <div class="project">
-                        <a href="https://www.google.com">
-                            <img class="darken" src="https://picsum.photos/1080/1080?random=3">
-                            <h4>Project</h4>
-                        </a>
-                    </div>
-                </div>
+
 
 
             </section>
+            
+            <div id="contact"></div>
+
+            <section class="nav-color-diff" style="margin-bottom:75px;">
 
 
 
-            <section id="contact">
-
-
-                <div class="contact-container nav-color-diff">
+                <div class="contact-container">
                     <div class="contact-desc">
                         <h2>Contact Us</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in turpis id enim pharetra malesuada in vitae augue. Fusce a metus a eros lacinia volutpat et vel quam. Nulla facilisi. Sed vel erat quis elit bibendum feugiat.</p>
-                        <div class="contact-img"><img src="https://picsum.photos/600/500?random=9"></div>
+                        <div class="contact-img parallax"><img src="https://picsum.photos/600/500?random=9"></div>
                     </div>
                     <div class="contact-form">
                         <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
@@ -207,6 +239,7 @@
                         </script>
                     </div>
                 </div>
+
 
 
             </section>
@@ -252,5 +285,6 @@
         
 
     </footer>
-    <script src="scripts.js"></script>
+    <script src="./js/scripts.js"></script>
+    <script src="./js/project-popup.js"></script>
 </html>

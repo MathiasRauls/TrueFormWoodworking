@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Open+Sans:wght@500&display=swap');
+@font-face {
+    font-family: 'Noir Jolie';
+    src: url('./font/noirjolie.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.project-popup-container {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    width: 100vsw;
+    height: 100vsh;
+    display: none;
+    opacity: 0;
+    overflow-y: scroll;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    transition: all .3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.647);
+}
+
+.project-popup {
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    display: flex;
+    object-fit: fill;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+    transition: all .3s ease-in-out;
+    background-image: url('https://picsum.photos/1920/1080?random=1');
+}
+
+.project-popup-top {
+    color: white;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+}
+
+.project-popup-top * {
+    padding: 0;
+    margin: 0;
+}
+
+.project-popup-top h3 {
+    font-size: 1.7rem;
+}
+
+.popup-toggle {
+    color: black;
+    margin-left: auto;
+    cursor: pointer;
+    padding: 7px 10px;
+    border-radius: 100%;
+    transition: all .2s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.532);
+}
+
+.popup-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.999);
+}
+
+.slideshow-controls {
+    position: absolute;
+    top: 46%;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slideshow-arrow {
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 20px;
+    color: white;
+    font-size: 24px;
+    user-select: none;
+    z-index: 10;
+    font-size: 2em;
+    font-weight: 100;
+    transform: scale(1, 1.5);
+    transition: all .2s ease-in-out;
+}
+
+.slideshow-arrow:hover {
+    font-weight: 500;
+}
+
+
+.project-popup-desc {
+    height: 83%;
+    color: white;
+    display: flex;
+    padding: 0 25px;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.project-popup-desc p {
+    padding: 0;
+    margin: 0;
+}
