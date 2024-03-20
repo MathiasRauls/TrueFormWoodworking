@@ -1,6 +1,6 @@
 # True Form Woodworking
 
-![True Form Woodworking Website Landing Page Repo Cover]([https://github.com/MathiasRauls/TrueFormWoodworking/blob/main/images/true-form-cover.png])
+![True Form Woodworking Website Landing Page Repo Cover](https://github.com/MathiasRauls/TrueFormWoodworking/blob/main/images/true-form-cover.png)
 
 [Visit Site](https://www.trueformscranton.com)
 
