@@ -1,93 +1,150 @@
-popUpContainer = document.querySelector('#popupContainer');
-projPopup = document.querySelector('.project-popup');
-projToggle = document.querySelector('#popupToggle');
-modernHome = document.querySelector('#modernHome');
-modernHomeView = document.querySelector('#modernHomeView');
-prevSlide = document.getElementById('prevSlide');
-nxtSlide = document.getElementById('nextSlide');
+const popUpContainer = document.querySelector('#popupContainer');
+const projToggle = document.querySelector('#popupToggle');
 
-isOpenBool = false;
+const projectToPopupMapping = {
+    modernCloset: 'modernClosetView',
+    mcmKitchen: 'mcmKitchenView',
+    computerRoom: 'computerRoomView',
+    tradVanity: 'tradVanityView',
+    bookCase: 'bookCaseView',
+    // Add mappings for additional projects here
+};
 
-// Modern Home Project
-modernHome.addEventListener('click', function() {
-    isOpenBool = true;
-    console.log(isOpenBool)
-    popUpContainer.style.display = 'flex';
-    modernHomeView.style.display = 'flex';
-    setTimeout(() => {
-        popUpContainer.style.opacity = '1';
-        modernHomeView.style.opacity = '1';
-    }, 100);
-});
+const projectsInfo = {
+    modernClosetView: {
+        images: [
+            './images/modern-closet/closet6.jpg',
+            './images/modern-closet/closet1.jpg',
+            './images/modern-closet/closet2.jpg',
+            './images/modern-closet/closet4.jpg',
+        ]
+    },
+    mcmKitchenView: {
+        images: [
+            './images/mcm-kitchen/mcm-kitchen1.jpg',
+            './images/mcm-kitchen/mcm-kitchen2.jpg',
+            './images/mcm-kitchen/mcm-kitchen3.jpg',
+            './images/mcm-kitchen/mcm-kitchen5.jpg',
+            './images/mcm-kitchen/mcm-kitchen6.jpg',
+        ]
+    },
+    computerRoomView: {
+        images: [
+            './images/computer-room/computer-room.jpg',
+        ]
+    },
+    tradVanityView: {
+        images: [
+            './images/trad-vanity/vanity1.jpg',
+            './images/trad-vanity/vanity2.jpg',
+        ]
+    },
+    bookCaseView: {
+        images: [
+            './images/book-case/case2.jpg',
+            './images/book-case/case1.jpg',
+        ]
+    },
+    // Define images for additional projects here
+};
 
-// Project X Button
-projToggle.addEventListener('click', function() {
-    closePopup()
-});
+let currentImageIndex = 0;
+let currentProject = null;
+
+// Update the background image of the popup based on the current project's images
+function updateBackgroundImage(images) {
+    const projPopup = document.querySelector(`#${currentProject}`); // Selects the currently displayed popup by ID
+    if (images && images.length > 0) {
+        projPopup.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+    }
+}
+
+/// Function to setup close button event listeners dynamically
+function setupCloseButtonListeners() {
+    document.querySelectorAll('.popup-toggle').forEach(toggle => {
+        toggle.removeEventListener('click', closePopup); // Remove existing listener to prevent duplicates
+        toggle.addEventListener('click', closePopup);
+    });
+}
+
+// Modify the showProjectPopup function to call setupCloseButtonListeners
+function showProjectPopup(projectMenuId) {
+    const popupId = projectToPopupMapping[projectMenuId];
+    currentProject = popupId;
+    currentImageIndex = 0;
+
+    document.querySelectorAll('.project-popup').forEach(popup => popup.style.display = 'none');
+    
+    const selectedPopup = document.getElementById(popupId);
+    if (selectedPopup) {
+        selectedPopup.style.display = 'flex';
+        popUpContainer.style.display = 'flex';
+        setTimeout(() => {
+            popUpContainer.style.opacity = '1';
+            setupSlideControls(); // Set up slide controls
+            setupCloseButtonListeners(); // Set up close button listeners here
+        }, 100);
+        updateBackgroundImage(projectsInfo[currentProject].images);
+    }
+}
 
 // Function to hide the popup
 function closePopup() {
     popUpContainer.style.opacity = '0';
-    modernHomeView.style.opacity = '0';
     setTimeout(() => {
         popUpContainer.style.display = 'none';
-        modernHomeView.style.display = 'none';
+        document.querySelectorAll('.project-popup').forEach(popup => popup.style.display = 'none');
+        currentProject = null;
     }, 500);
 }
 
-// Event listener for closing popup on outside click
-popUpContainer.addEventListener('click', function(event) {
-    // Check if the clicked area is not the .project-popup or a child of it
-    if (!modernHomeView.contains(event.target)) {
-        closePopup();
-    }
-});
+// Dynamically set up slide control event listeners
+function setupSlideControls() {
+    const currentProjPopup = document.getElementById(currentProject);
+    if (!currentProjPopup) return;
 
-// Slide Show
-const images = [
-    'https://picsum.photos/1920/1080?random=1',
-    'https://picsum.photos/1920/1080?random=2',
-    'https://picsum.photos/1920/1080?random=3'
-    // Add more images as needed
-];
-let currentImageIndex = 0;
+    const prevSlide = currentProjPopup.querySelector('.slideshow-arrow.left');
+    const nextSlide = currentProjPopup.querySelector('.slideshow-arrow.right');
 
-function updateBackgroundImage() {
-    modernHomeView.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+    prevSlide.onclick = () => changeSlide(-1);
+    nextSlide.onclick = () => changeSlide(1);
 }
 
-prevSlide.addEventListener('click', function() {
-    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-    updateBackgroundImage();
+// Change slide based on direction
+function changeSlide(direction) {
+    if (!currentProject) return;
+    const images = projectsInfo[currentProject].images;
+    currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+    updateBackgroundImage(images);
+}
+
+document.querySelectorAll('.project').forEach(project => {
+    project.addEventListener('click', function() {
+        showProjectPopup(this.id);
+    });
 });
 
-nxtSlide.addEventListener('click', function() {
-    currentImageIndex = (currentImageIndex + 1) % images.length;
-    updateBackgroundImage();
+popUpContainer.addEventListener('click', function(event) {
+    if (!event.target.closest('.project-popup')) closePopup();
 });
 
 let touchstartX = 0;
 let touchendX = 0;
 
 function handleSwipeGesture() {
-    if (touchendX < touchstartX) {
-        // Swiped Left, show next image
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        updateBackgroundImage();
-    }
-    if (touchendX > touchstartX) {
-        // Swiped Right, show previous image
-        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-        updateBackgroundImage();
-    }
+    if (!currentProject) return;
+    const images = projectsInfo[currentProject].images;
+    if (touchendX < touchstartX) changeSlide(1); // Next image
+    else if (touchendX > touchstartX) changeSlide(-1); // Previous image
 }
 
-projPopup.addEventListener('touchstart', e => {
+document.querySelector('.project-popup').addEventListener('touchstart', e => {
     touchstartX = e.changedTouches[0].screenX;
 });
 
-projPopup.addEventListener('touchend', e => {
+document.querySelector('.project-popup').addEventListener('touchend', e => {
     touchendX = e.changedTouches[0].screenX;
     handleSwipeGesture();
 });
 
+projToggle.addEventListener('click', closePopup);

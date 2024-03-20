@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-
     
     // Select all links with hashes
     const links = document.querySelectorAll('a[href*="#"]');
@@ -26,91 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Change Navbar Color
-    const navMenu = document.querySelector('#navMenu');
-    const navbar = document.querySelector('.navbar');
-    const colorDiffElems = document.querySelectorAll('.nav-color-diff');
-
-    // Define the function to check if navbar overlaps with .nav-color-diff elements
-    const checkOverlap = () => {
-        const navbarRect = navbar.getBoundingClientRect();
-        const navbarMenuRect = navMenu.getBoundingClientRect();
-
-        for (let elem of colorDiffElems) {
-            if (window.innerWidth >= 768) {             
-                const rect = elem.getBoundingClientRect();
-                // Check if the navbar is within the vertical bounds of the element
-                if (rect.top <= navbarRect.bottom && rect.bottom >= navbarRect.top) {
-                    return true; // Overlap detected
-                }
-            } else if (window.innerWidth <= 768) {             
-                const rect = elem.getBoundingClientRect();
-                // Check if the navbar menu is within the vertical bounds of the element
-                if (rect.top <= navbarMenuRect.bottom && rect.bottom >= navbarMenuRect.top) {
-                    return true; // Overlap detected
-                }
-            } else {
-                return false;
-            }
-        }
-        return false; // No overlap detected
-    };
-
-    // Define the function to run on scroll
-    const onScroll = () => {
-      // Check for overlap with any .nav-color-diff elements
-      if (checkOverlap()) {
-        // Add a class to change text color to light brown when overlapping
-        if (window.innerWidth >= 768) {
-            navbar.classList.add('within-color-diff');
-        } else {
-            if (navToggleClick != true) {
-                navMenu.classList.add('within-color-diff');
-
-            } else {
-                navMenu.classList.remove('within-color-diff');
-            }
-        }
-      } else {
-        // Otherwise, ensure the light brown class is removed
-        navbar.classList.remove('within-color-diff');
-        navMenu.classList.remove('within-color-diff');
-      }
-    };
-
-    // Mobile Navbar
-    var navToggle = document.querySelector('.nav-toggle');
-    var navLinks = document.querySelectorAll('.nav-link');
-    var navbar_elem = document.querySelector('.navbar');
-    var navToggleClick = false;
-
-    navToggle.addEventListener('click', function() {
-        // Check if the window size is 768px or smaller
-        if (window.innerWidth <= 768) {
-            if (navToggleClick != true) {
-                    onScroll();
-                    navbar_elem.classList.toggle('active');
-                    navToggle.classList.toggle('active');
-                    navToggleClick = true;
-            } else {
-                    onScroll();
-                    navbar_elem.classList.toggle('active');
-                    navToggle.classList.toggle('active');
-                    navToggleClick = false;
-            }
-        }
-        navLinks.forEach(function(value, index) {
-            value.addEventListener('click', function() {
-                if (window.innerWidth <= 768) {
-                    console.log('Closed Nav Menu');
-                    navbar_elem.classList.toggle('active');
-                    navToggle.classList.toggle('active');
-                    // Assuming navToggleClick is defined elsewhere in your code
-                    navToggleClick = false;
-                }
-            });
-        });
-    });
 
     // Fade-in animation Landing
     const flourish = document.querySelector('.landing-elem');
@@ -150,8 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
     }, 1500);  // Start typing 1.5s after page load
 
-    // Attach the scroll event listener to the window
-    window.addEventListener('scroll', onScroll);
 });
 
 

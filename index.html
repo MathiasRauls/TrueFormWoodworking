@@ -1,91 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link async defer rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/project-popup.css">
+    <link rel="stylesheet" href="./css/mobile-nav.css">
+    <title>True Form Woodworking: Custom Cabinetry & Woodwork in Scranton, PA</title>
+    <meta name="description" content="Discover unparalleled craftsmanship with True Form Woodworking, a family-owned artisanal woodworking firm in Scranton, PA. Specializing in bespoke kitchen & bath cabinetry, closets, and custom woodworking solutions. With over 25 years of expertise, we pride ourselves on in-house production using premium materials. Elevate your space with our personalized service and high-quality finishes.">
+    <meta name="keywords" content="True Form Woodworking, custom cabinetry, artisanal woodworking Scranton PA, bespoke kitchen cabinets, custom bath cabinetry, custom closets, woodworking services, high-quality finishes, in-house production, premium materials, personalized service, craftsmanship, woodworking projects, custom woodwork, luxury cabinetry solutions, woodworking consultation, Scranton woodworking firm">
+    <script>
+        // Force scroll to top before unload
+        window.onbeforeunload = function() {
+            window.scrollTo(0, 0);
+        }
+    </script>
+</head>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLRBK0ZXD8"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-    gtag('config', 'G-HLRBK0ZXD8');
+        gtag('config', 'G-HLRBK0ZXD8', {
+            'cookie_domain': 'trueformscranton.com',
+            'cookie_flags': 'SameSite=None;Secure'
+        });
     </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/project-popup.css">
-    <title>True Form Wood Working</title>
-</head>
+
     <body>
+        <div id="loader" class="loader"></div>
 
         
         <header>
 
 
             <div class="nav-wrapper">
-                <div class="nav-toggle" id="navMenu">
+                <div class="nav-toggle" id="navMenu" role="button" aria-label="Navigation Menu" tabindex="0">
                     <hr class="top"/>
                     <hr class="btm"/>
                 </div>
-                <nav class="navbar">
-                    <a href="./index.html" class="nav-link">HOME</a>
-                    <a href="./schedule.html" class="nav-link">BOOK</a>
-                    <a href="./index.html#services" class="nav-link">SERVICES</a>
-                    <a href="./index.html#portfolio" class="nav-link">PORTFOLIO</a>
-                    <a href="./index.html#contact" class="nav-link">CONTACT</a>
+                <nav class="navbar" aria-label="Main navigation">
+                    <a href="./index.html" class="nav-link" role="menuitem">HOME</a>
+                    <a href="./schedule.html" class="nav-link" role="menuitem">BOOK</a>
+                    <a href="./index.html#services" class="nav-link" role="menuitem">SERVICE</a>
+                    <a href="./index.html#portfolio" class="nav-link" role="menuitem">PORTFOLIO</a>
+                    <a href="./index.html#contact" class="nav-link" role="menuitem">CONTACT</a>
                 </nav>            
+            </div>
+
+            <div class="mobile-nav-wrapper">
+                <div class="mobile-nav" aria-label="Mobile navigation">
+                    <a href="./index.html" class="mobile-nav-link" role="menuitem">HOME</a>
+                    <a href="./schedule.html" class="mobile-nav-link" role="menuitem">BOOK</a>
+                    <a href="./index.html#services" class="mobile-nav-link" role="menuitem">SERVICES</a>
+                    <a href="./index.html#portfolio" class="mobile-nav-link" role="menuitem">PORTFOLIO</a>
+                    <a href="./index.html#contact" class="mobile-nav-link" role="menuitem">CONTACT</a>
+                </div>
+                <div class="mobile-nav-close" id="mobileNavClose" role="button" aria-label="Navigation Close Button" tabindex="0">&#x2715</div>
             </div>
 
 
         </header>
 
-
+        
         <div class="project-popup-container" id="popupContainer">
 
-            <div class="project-popup" id="modernHomeView">
+
+            <div class="project-popup" id="modernClosetView">
                 <div class="project-popup-top">
-                    <h3>Modern Home</h3>
+                    <h3>MODERN CLOSET</h3>
                     <div class="popup-toggle" id="popupToggle">&#x2715</div>
                 </div>
-
+                
                 <div class="slideshow-controls">
-                    <span class="slideshow-arrow left" id="prevSlide"><</span>
-                    <span class="slideshow-arrow right" id="nextSlide">></span>
-                </div>
+                    <span class="slideshow-arrow left" id="projPrevSlide"><</span>
+                    <span class="slideshow-arrow right" id="projNextSlide">></span>
+                </div>                
                 
                 <div class="project-popup-desc">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in turpis id enim pharetra malesuada in vitae augue. Fusce a metus a eros lacinia volutpat et vel quam. Nulla facilisi.</p>
+                    <p>Our latest project is a sleek, modern custom closet, designed with premium hardwoods and featuring adjustable shelving, soft-close drawers, and integrated LED lighting.</p>
                 </div>
             </div>
+
+            <div class="project-popup" id="mcmKitchenView">
+                <div class="project-popup-top">
+                    <h3>MODERN SHAKER KITCHEN</h3>
+                    <div class="popup-toggle" id="popupToggle">&#x2715</div>
+                </div>
+                
+                <div class="slideshow-controls">
+                    <span class="slideshow-arrow left" id="projPrevSlide"><</span>
+                    <span class="slideshow-arrow right" id="projNextSlide">></span>
+                </div>                
+                
+                <div class="project-popup-desc">
+                    <p>Crafted with precision and care, our team designed and built these premium mid-century modern cabinets, accentuating the kitchen's elegance with clean lines and a timeless aesthetic.</p>
+                </div>
+            </div>
+
+
+            <div class="project-popup" id="computerRoomView">
+                <div class="project-popup-top">
+                    <h3>CONFERENCE ROOM</h3>
+                    <div class="popup-toggle" id="popupToggle">&#x2715</div>
+                </div>
+                
+                <div class="slideshow-controls">
+                    <span class="slideshow-arrow left" id="projPrevSlide"><</span>
+                    <span class="slideshow-arrow right" id="projNextSlide">></span>
+                </div>                
+                
+                <div class="project-popup-desc">
+                    <p>A glossy, modern conference table paired with a streamlined, wall-mounted desk unit, both featuring rich wood tones that bring warmth and elegance to this contemporary office space.</p>
+                </div>
+            </div>
+
+            <div class="project-popup" id="tradVanityView">
+                <div class="project-popup-top">
+                    <h3>TRADITIONAL VANITY</h3>
+                    <div class="popup-toggle" id="popupToggle">&#x2715</div>
+                </div>
+                
+                <div class="slideshow-controls">
+                    <span class="slideshow-arrow left" id="projPrevSlide"><</span>
+                    <span class="slideshow-arrow right" id="projNextSlide">></span>
+                </div>                
+                
+                <div class="project-popup-desc">
+                    <p>A custom traditional vanity showcases expertly crafted natural wood cabinetry with a classic design, providing a sophisticated and functional centerpiece for the refined bathroom providing plenty of storage.</p>
+                </div>
+            </div>
+
+
+            <div class="project-popup" id="bookCaseView">
+                <div class="project-popup-top">
+                    <h3>BOOK CASE</h3>
+                    <div class="popup-toggle" id="popupToggle">&#x2715</div>
+                </div>
+                
+                <div class="slideshow-controls">
+                    <span class="slideshow-arrow left" id="projPrevSlide"><</span>
+                    <span class="slideshow-arrow right" id="projNextSlide">></span>
+                </div>                
+                
+                <div class="project-popup-desc">
+                    <p>A custom-built traditional bookcase in rich, dark wood finish offers both elegance and expansive storage, making it a timeless addition to any personal library or office space.</p>
+                </div>
+            </div>
+
 
         </div>
 
         <div class="main">
 
 
-            <section class="animate__animated animate__fadeIn" style="margin:unset;">
+            <section id="landingBanner" class="animate__animated animate__fadeIn" style="margin:unset;">
 
 
 
                 <div class="landing-container">
-                    <img class="landing-banner darken parallax" src="./images/workshop_tools.png">
+                    <img class="landing-banner darken parallax" src="./images/workshop_tools.png" alt="" loading="lazy" decoding="async">
                     <div class="landing-banner-center">
-                        <img class="landing-elem left-fl" src="./images/flourish.png">
+                        <img class="landing-elem left-fl" src="./images/flourish.png" alt="" loading="lazy" decoding="async">
                         <div class="landing-content-wrapper">
-                            <img src="./images/logo.png" alt="True Form Logo" class="logo">
+                            <img src="./images/logo.png" alt="True Form Logo" class="logo" alt="" loading="lazy" decoding="async">
                             <h1>TRUEFORM‎ </h1>
                             <h2>woodworking‎ </h2>
                         </div>
-                        <img class="landing-elem right-fl" src="./images/flourish.png">
+                        <img class="landing-elem right-fl" src="./images/flourish.png" alt="" loading="lazy" decoding="async">
                     </div>
                 </div>
 
 
 
             </section>
-
-
+        
+            <div id="hero"></div>
 
             <section class="nav-color-diff">
 
@@ -94,12 +188,13 @@
                 <div class="hero-container">
                     <div class="hero-desc">
                         <h2>True Form Woodworking</h2>
-                        <h3>FINEST CUSTOM CABINETRY ✦ TRIM & FINISH CARPENTRY</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in turpis id enim pharetra malesuada in vitae augue. Fusce a metus a eros lacinia volutpat et vel quam. Nulla facilisi. Sed vel erat quis elit bibendum feugiat. Vivamus ut elit sed sapien facilisis sollicitudin. Quisque non ligula ut purus cursus varius. Pellentesque at ultrices est, sed cursus erat. Morbi volutpat, diam et vestibulum feugiat, justo odio bibendum dolor, ac vulputate est eros non purus. Mauris vel lectus at arcu.</p>
+                        <!-- <h3>FINEST CUSTOM CABINETRY ✦ TRIM & FINISH CARPENTRY</h3> -->
+                        <h3>BEAUTY & ORDER IN CREATION</h3>
+                        <p>A family-owned artisanal woodworking and cabinetry firm in Scranton, PA. We can offer you over 25 years of expertise in custom designs and finishes. Specializing in kitchen &  bath cabinetry, and closet solutions. We pride ourselves on in-house production of doors, drawers, trims, and mouldings using the finest premium materials. Experience unparalleled craftsmanship and personalized service with us.</p>
                     </div>
                     <div class="hero-contact-wrapper">
                         <div class="hero-img">
-                            <img src="https://picsum.photos/600/400?random=8">
+                            <img src="./images/modern-closet/closet2.jpg"  alt="" loading="lazy" decoding="async">
                         </div>
                         <div class="hero-contact">
                             <div>
@@ -129,10 +224,10 @@
                 <div class="carousel-container parallax">
                     
                     <div class="carousel">
-                        <div class="carousel-slide" style="background-image: url('https://picsum.photos/1920/1080?random=1');"></div>
-                        <div class="carousel-slide" style="background-image: url('https://picsum.photos/1920/1080?random=2');"></div>
-                        <div class="carousel-slide" style="background-image: url('https://picsum.photos/1920/1080?random=3');"></div>
-                        <div class="carousel-slide" style="background-image: url('https://picsum.photos/1920/1080?random=4');"></div>
+                        <div class="carousel-slide" style="background-image: url('./images/mcm-kitchen/mcm-kitchen1.jpg');"></div>
+                        <div class="carousel-slide" style="background-image: url('./images/mcm-kitchen/mcm-kitchen2.jpg');"></div>
+                        <div class="carousel-slide" style="background-image: url('./images/modern-closet/closet2.jpg');"></div>
+                        <div class="carousel-slide" style="background-image: url('./images/modern-closet/closet6.jpg');"></div>
                     </div>
 
                     <div class="carousel-indicators">
@@ -145,6 +240,13 @@
                     <div class="carousel-arrow left" onclick="previousSlide()"><</div>
                     <div class="carousel-arrow right" onclick="nextSlide()">></div>
 
+                </div>
+
+                <div class="mobile-carousel-replace full-image-container parallax">
+                    <img class="full-image" src="./images/mcm-kitchen/mcm-kitchen1.jpg"  alt="" loading="lazy" decoding="async">
+                    <img class="full-image" src="./images/mcm-kitchen/mcm-kitchen2.jpg"  alt="" loading="lazy" decoding="async">
+                    <img class="full-image" src="./images/modern-closet/closet2.jpg" alt="" loading="lazy" decoding="async">
+                    <img class="full-image" src="./images/modern-closet/closet6.jpg" alt="" loading="lazy" decoding="async">
                 </div>
 
 
@@ -160,16 +262,19 @@
                 <div class="services-container">
                     <div class="services-desc">
                         <h2>Our Services</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, lorem vitae dictum mollis, odio felis vehicula arcu, at posuere lorem est vitae ligula. Nulla facilisi. Proin id purus et odio fermentum vehicula. Mauris quis magna vitae arcu varius bibendum. Nullam at.</p>
+                        <p>We specialize in bespoke woodworking and cabinetry with over 25 years of experience. Our expertise in creating high-quality customized solutions is unmatched because we source only the most premium materials and state-of-the-art techniques to ensure your space is both beautiful and functional.</p>
                         <ul class="service-list">
-                            <li>CUSTOM CABINETRY</li>
-                            <li>TRIM & FINISH CARPENTRY</li>
-                            <li>RESIDENTIAL CONTRACTOR</li>
-                            <li>HANDYMAN SERVICES</li>
+                            <li>Bespoke Kitchen & Bath Cabinetry</li>
+                            <li>Custom Doors, & Drawers</li>
+                            <li>High Quality Closets</li>
+                            <li>Professional Trim & Mouldings</li>
+                            <li>In-House Finishes</li>
+                            <li>Handyman Services</li>
+                            <li>Project Consultation</li>
                         </ul>
                         <a href="./schedule.html">Book Consultation</a>
                     </div>
-                    <img class="services-image parallax" src="https://picsum.photos/500/600">
+                    <img class="services-image" src="./images/services.jpg" alt="" loading="lazy" decoding="async">
 
                 </div>
 
@@ -184,29 +289,41 @@
 
                 <div class="parallax">
                     <div class="full-image-container">
-                        <img class="full-image darken" src="https://picsum.photos/1920/1080?random=1">
+                        <img class="full-image darken" src="./images/chris.jpg" alt="" loading="lazy" decoding="async">
                         <div class="portfolio-heading">
                             <h2 class="portfolio-header">Superior Craftsmanship<hr/></h2>
-                            <p class="portfolio-subheader">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in turpis id enim pharetra malesuada in vitae augue. Fusce a metus a eros lacinia volutpat et vel quam. Nulla facilisi. Sed vel erat quis elit bibendum feugiat. Vivamus ut elit sed sapien facilisis sollicitudin.</p>
+                            <p class="portfolio-subheader">We excel in creating custom functional designs that perfectly marry superior craftsmanship with premium materials, guaranteeing each item reflects our commitment to elegance and functionality.</p>
                         </div>
                     </div>
                     <div class="portfolio-container">
-                        <div class="project" id="modernHome">
+                        <div class="project" id="modernCloset">
                             <a>
-                                <img class="darken" src="https://picsum.photos/1080/1080?random=1">
-                                <h4>Modern Home</h4>
+                                <img class="darken" src="./images/modern-closet/closet-cover.jpg" alt="" loading="lazy" decoding="async">
+                                <h4>Modern Closet</h4>
                             </a>
                         </div>
-                        <div class="project">
+                        <div class="project" id="mcmKitchen">
                             <a>
-                                <img class="darken" src="https://picsum.photos/1080/1080?random=2">
-                                <h4>Bathroom</h4>
+                                <img class="darken" src="./images/mcm-kitchen/mcm-kitchen-cover.jpg" alt="" loading="lazy" decoding="async">
+                                <h4>Modern Shaker Kitchen</h4>
                             </a>
                         </div>
-                        <div class="project">
+                        <div class="project" id="computerRoom">
                             <a>
-                                <img class="darken" src="https://picsum.photos/1080/1080?random=3">
-                                <h4>Deck</h4>
+                                <img class="darken" src="./images/computer-room/computer-room-cover.jpg" alt="" loading="lazy" decoding="async">
+                                <h4>Conference Room</h4>
+                            </a>
+                        </div>
+                        <div class="project" id="tradVanity">
+                            <a>
+                                <img class="darken" src="./images/trad-vanity/vanity-cover.jpg" alt="" loading="lazy" decoding="async">
+                                <h4>Traditional Vanity</h4>
+                            </a>
+                        </div>
+                        <div class="project" id="bookCase">
+                            <a>
+                                <img class="darken" src="./images/book-case/case-cover.jpg" alt="" loading="lazy" decoding="async">
+                                <h4>Book Case</h4>
                             </a>
                         </div>
                     </div>
@@ -225,8 +342,10 @@
                 <div class="contact-container">
                     <div class="contact-desc">
                         <h2>Contact Us</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in turpis id enim pharetra malesuada in vitae augue. Fusce a metus a eros lacinia volutpat et vel quam. Nulla facilisi. Sed vel erat quis elit bibendum feugiat.</p>
-                        <div class="contact-img parallax"><img src="https://picsum.photos/600/500?random=9"></div>
+                        <p>Need any woodworking tips or a quick price inquiry? Please reach out to us using our contact form.</p><br/>
+                        <p>Ready to order our services? Schedule a meeting to discuss your project in full go to our booking page with the link below.</p><br/>
+                        <a class="contact-btn" href="./schedule.html">Book Consultation</a>
+                        <div class="contact-img"><img src="./images/contact.jpg" alt="" loading="lazy" decoding="async"></div>
                     </div>
                     <div class="contact-form">
                         <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
@@ -258,9 +377,9 @@
 
         <div class="footer-container">
             <div class="footer-desc">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in turpis id enim pharetra malesuada in vitae augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in turpis id enim pharetra malesuada in vitae augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in turpis id enim pharetra malesuada in vitae augue.</p>
+                <p class="footer-info-p">A family-owned artisanal woodworking and cabinetry firm in Scranton, PA. We can offer you over 25 years of expertise in custom designs and finishes. Specializing in kitchen &  bath cabinetry, and closet solutions. We pride ourselves on in-house production of doors, drawers, trims, and mouldings using the finest premium materials. Experience unparalleled craftsmanship and personalized service with us.</p>
                 <div class="text-logo">True Form Woodworking</div>
-                <p class="footer-mini-info">📍 SCRANTON, PA | <a>TERMS & CONDITIONS</a> | <a>FAQs</a></p>
+                <p class="footer-mini-info">📍 SCRANTON, PA <!--| <a>TERMS & CONDITIONS</a> | <a>FAQs</a>--></p>
             </div>
             <div class="footer-links-contact">
                 <ul class="footer-link-list">
@@ -285,6 +404,8 @@
         
 
     </footer>
+    <script src="./js/loader.js"></script>
     <script src="./js/scripts.js"></script>
-    <script src="./js/project-popup.js"></script>
+    <script async defer src="./js/project-popup.js"></script>
+    <script async defer src="./js/mobile-nav.js"></script>
 </html>

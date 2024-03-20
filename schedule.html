@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLRBK0ZXD8"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-HLRBK0ZXD8');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="./css/mobile-nav.css">
     <link rel="stylesheet" href="./css/styles.css">
-    <title>True Form Wood Working</title>
+    <title>True Form Woodworking: Schedule A Consultation with a Woodworker</title>
+    <meta name="description" content="Schedule your custom woodworking consultation with True Form Woodworking today. Offering personalized sessions to discuss your bespoke cabinetry, closet designs, and any custom woodwork needs. Located in Scranton, PA, our expert team is ready to bring your vision to life with craftsmanship that speaks quality and elegance.">
+    <meta name="keywords" content="book woodworking consultation, schedule custom cabinetry, Scranton PA woodworking booking, True Form Woodworking appointment, custom woodwork consultation, bespoke woodworking services, personalized woodworking session, expert cabinetry consultation, luxury woodwork design, professional woodworking advice, cabinetry booking Scranton, custom woodworking project discussion">
+    <script>
+        // Force scroll to top before unload
+        window.onbeforeunload = function() {
+            window.scrollTo(0, 0);
+        }
+    </script>
 </head>
-    <body>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLRBK0ZXD8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
+        gtag('config', 'G-HLRBK0ZXD8', {
+            'cookie_domain': 'trueformscranton.com',
+            'cookie_flags': 'SameSite=None;Secure'
+        });
+    </script>
+    <body>
         
         <header>
 
@@ -35,21 +46,19 @@
                     <a href="./index.html#contact" class="nav-link">CONTACT</a>
                 </nav>            
             </div>
-            <style>
-                .nav-link {
-                    color: black;
-                    opacity: 100%;
-                }
-                .nav-toggle hr{
-                    border: 1px solid black;
-                }
-                @media (max-width: 768px) {
-                    .nav-link {
-                        color: white;
-                        opacity: 100%;
-                    }
-                }
 
+            <div class="mobile-nav-wrapper">
+                <div class="mobile-nav">
+                    <a href="./index.html" class="mobile-nav-link">HOME</a>
+                    <a href="./schedule.html" class="mobile-nav-link">BOOK</a>
+                    <a href="./index.html#services" class="mobile-nav-link">SERVICES</a>
+                    <a href="./index.html#portfolio" class="mobile-nav-link">PORTFOLIO</a>
+                    <a href="./index.html#contact" class="mobile-nav-link">CONTACT</a>
+                </div>
+                <div class="mobile-nav-close" id="mobileNavClose">&#x2715</div>
+            </div>
+
+            <style>
                 section {
                     padding: unset;
                 }
@@ -90,21 +99,21 @@
 
 
 
-    <footer>
+    <footer style="margin-top: 500px;">
 
 
         <div class="footer-container">
             <div class="footer-desc">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in turpis id enim pharetra malesuada in vitae augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in turpis id enim pharetra malesuada in vitae augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in turpis id enim pharetra malesuada in vitae augue.</p>
+                <p class="footer-info-p">A family-owned artisanal woodworking and cabinetry firm in Scranton, PA. We can offer you over 25 years of expertise in custom designs and finishes. Specializing in kitchen &  bath cabinetry, and closet solutions. We pride ourselves on in-house production of doors, drawers, trims, and mouldings using the finest premium materials. Experience unparalleled craftsmanship and personalized service with us.</p>
                 <div class="text-logo">True Form Woodworking</div>
-                <p class="footer-mini-info">📍 SCRANTON, PA | <a>TERMS & CONDITIONS</a> | <a>FAQs</a></p>
+                <p class="footer-mini-info">📍 SCRANTON, PA <!--| <a>TERMS & CONDITIONS</a> | <a>FAQs</a>--></p>
             </div>
             <div class="footer-links-contact">
                 <ul class="footer-link-list">
+                    <li><a href="./schedule.html">BOOK US</a></li>
                     <li><a href="./index.html#contact">CONTACT</a></li>
                     <li><a href="./index.html#services">SERVICES</a></li>
                     <li><a href="./index.html#portfolio.html">PORTFOLIO</a></li>
-                    <li><a href="./schedule.html">CONSULTATION</a></li>
                 </ul>
                 <div class="footer-contact">
                     <div>
@@ -123,4 +132,5 @@
 
     </footer>
     <script src="./js/scripts.js"></script>
+    <script src="./js/mobile-nav.js"></script>
 </html>
