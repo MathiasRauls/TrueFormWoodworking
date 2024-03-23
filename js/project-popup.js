@@ -4,6 +4,7 @@ const projToggle = document.querySelector('#popupToggle');
 const projectToPopupMapping = {
     modernCloset: 'modernClosetView',
     mcmKitchen: 'mcmKitchenView',
+    antiqueCabinetryTan: 'antiqueCabinetryTanView',
     computerRoom: 'computerRoomView',
     tradVanity: 'tradVanityView',
     bookCase: 'bookCaseView',
@@ -26,6 +27,16 @@ const projectsInfo = {
             './images/mcm-kitchen/mcm-kitchen3.jpg',
             './images/mcm-kitchen/mcm-kitchen5.jpg',
             './images/mcm-kitchen/mcm-kitchen6.jpg',
+        ]
+    },
+    antiqueCabinetryTanView: {
+        images: [
+            './images/beaded-tan-cab/beaded-tan1.jpg',
+            './images/beaded-tan-cab/beaded-tan2.jpg',
+            './images/beaded-tan-cab/beaded-tan3.jpg',
+            './images/beaded-tan-cab/beaded-tan4.jpg',
+            './images/beaded-tan-cab/beaded-tan5.jpg',
+            './images/beaded-tan-cab/beaded-tan6.jpg',
         ]
     },
     computerRoomView: {
@@ -67,6 +78,15 @@ function setupCloseButtonListeners() {
     });
 }
 
+// Function to preload images
+function preloadImages(projectId) {
+    const urls = projectsInfo[projectId].images;
+    urls.forEach(url => {
+        const img = new Image();
+        img.src = url;
+    });
+}
+
 // Modify the showProjectPopup function to call setupCloseButtonListeners
 function showProjectPopup(projectMenuId) {
     const popupId = projectToPopupMapping[projectMenuId];
@@ -85,6 +105,8 @@ function showProjectPopup(projectMenuId) {
             setupCloseButtonListeners(); // Set up close button listeners here
         }, 100);
         updateBackgroundImage(projectsInfo[currentProject].images);
+        preloadImages(currentProject); // Preload images for the selected project
+
     }
 }
 
